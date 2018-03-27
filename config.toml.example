@@ -1,0 +1,10 @@
+# Della credentials
+Login = "Username"
+Password = "password"
+
+# Running hours
+Start = 7
+Stop = 23
+
+# Refresh period in minutes
+Period = 30
