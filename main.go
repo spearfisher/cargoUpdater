@@ -25,11 +25,8 @@ func main() {
 
 func periodicJob(dellaClient *della.Client) {
 	cargoData, err := dellaClient.GetList()
-	if err != nil {
-		utils.Logger.Println(err)
-	}
 
-	if len(cargoData.Ids) > 0 {
+	if err == nil && len(cargoData.Ids) > 0 {
 		fmt.Println(fmt.Sprintf("Updating next entyties: %s", cargoData.Ids))
 		dellaClient.RefreshCargos(cargoData)
 	}

@@ -66,6 +66,7 @@ func (c *Client) GetList() (*CargosData, error) {
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
 		utils.Logger.Println(err)
+		return nil, err
 	}
 
 	c.setCookies(resp.Cookies())
